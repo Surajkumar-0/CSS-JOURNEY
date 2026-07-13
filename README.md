@@ -1,6 +1,6 @@
 # CSS-JOURNEY
 
-# Introduction to CSS
+# 0. Introduction to CSS
 
 ## What is CSS?
 
@@ -224,3 +224,253 @@ CSS is used to separate content from presentation, improve webpage appearance, r
 
 CSS (Cascading Style Sheets) is the standard styling language for web development. It enhances the appearance of HTML pages by controlling colors, fonts, layouts, spacing, animations, and responsiveness. CSS makes websites attractive, maintainable, and user-friendly, making it an essential technology alongside HTML and JavaScript.
 
+
+# 01. Inline, Internal and External CSS
+
+## Introduction
+
+CSS can be added to an HTML document in three different ways:
+
+1. Inline CSS
+2. Internal CSS
+3. External CSS
+
+Each method has its own purpose and use case. Choosing the appropriate method helps in writing clean, maintainable, and reusable code.
+
+---
+
+# 1. Inline CSS
+
+## Definition
+
+Inline CSS is used to apply styles directly to an HTML element using the `style` attribute.
+
+## Syntax
+
+```html
+<h1 style="color: red;">Hello World</h1>
+```
+
+## Example
+
+```html
+<p style="color: blue; background-color: yellow;">
+    This is Inline CSS.
+</p>
+```
+
+## Advantages
+
+* Easy to apply.
+* Useful for testing small styles.
+* Styles only one specific element.
+
+## Disadvantages
+
+* Difficult to maintain.
+* Repeats code.
+* Not suitable for large projects.
+
+---
+
+# 2. Internal CSS
+
+## Definition
+
+Internal CSS is written inside the `<style>` element within the `<head>` section of an HTML document.
+
+## Syntax
+
+```html
+<head>
+    <style>
+        h1{
+            color:red;
+        }
+    </style>
+</head>
+```
+
+## Example
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p{
+            color:green;
+        }
+    </style>
+</head>
+
+<body>
+
+<p>Learning CSS</p>
+
+</body>
+</html>
+```
+
+## Advantages
+
+* Keeps styles separate from HTML elements.
+* Suitable for single-page websites.
+* Easier to maintain than Inline CSS.
+
+## Disadvantages
+
+* Cannot be reused across multiple HTML pages.
+* Increases file size for large websites.
+
+---
+
+# 3. External CSS
+
+## Definition
+
+External CSS stores all CSS rules in a separate `.css` file. The HTML file is connected to the CSS file using the `<link>` element.
+
+## Syntax
+
+### HTML File
+
+```html
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+```
+
+### CSS File
+
+```css
+h1{
+    color:red;
+}
+```
+
+## Example
+
+**index.html**
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Hello CSS</h1>
+
+</body>
+</html>
+```
+
+**style.css**
+
+```css
+h1{
+    color:blue;
+}
+```
+
+## Advantages
+
+* Keeps HTML and CSS separate.
+* Reusable across multiple web pages.
+* Easy to maintain.
+* Recommended for professional web development.
+* Reduces code duplication.
+
+## Disadvantages
+
+* Requires an additional CSS file.
+* If the CSS file is missing, styles will not be applied.
+
+---
+
+# Comparison of CSS Methods
+
+| Feature     | Inline CSS          | Internal CSS         | External CSS         |
+| ----------- | ------------------- | -------------------- | -------------------- |
+| Location    | Inside HTML element | Inside `<style>` tag | Separate `.css` file |
+| Scope       | Single element      | Single webpage       | Multiple webpages    |
+| Reusability | No                  | Limited              | Yes                  |
+| Maintenance | Difficult           | Moderate             | Easy                 |
+| Best For    | Small changes       | Single-page websites | Large websites       |
+
+---
+
+# CSS Priority
+
+When multiple CSS rules target the same element, the browser follows this priority:
+
+1. Inline CSS (Highest Priority)
+2. Internal CSS
+3. External CSS
+
+---
+
+# Best Practices
+
+* Use **Inline CSS** only for quick testing or small changes.
+* Use **Internal CSS** for small or single-page projects.
+* Use **External CSS** for professional and multi-page websites.
+* Keep HTML structure and CSS styling in separate files whenever possible.
+
+---
+
+# Interview Questions
+
+### 1. How many ways can CSS be added to an HTML document?
+
+There are three ways:
+
+* Inline CSS
+* Internal CSS
+* External CSS
+
+---
+
+### 2. Which CSS method is recommended for professional web development?
+
+External CSS is recommended because it is reusable, maintainable, and keeps the code organized.
+
+---
+
+### 3. Which CSS method has the highest priority?
+
+Inline CSS has the highest priority.
+
+---
+
+### 4. What is the purpose of the `<link>` element?
+
+The `<link>` element is used to connect an external CSS file with an HTML document.
+
+Example:
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+---
+
+# Key Points
+
+* CSS can be added in three different ways.
+* Inline CSS is written inside an HTML element.
+* Internal CSS is written inside the `<style>` tag.
+* External CSS is stored in a separate `.css` file.
+* External CSS is the most commonly used method in modern web development.
+* CSS priority: Inline > Internal > External.
+
+---
+
+# Summary
+
+CSS can be applied to HTML using Inline, Internal, or External methods. While Inline CSS is useful for quick styling and Internal CSS is suitable for small projects, External CSS is the preferred method for modern web development because it promotes code reusability, maintainability, and better project organization.
