@@ -474,3 +474,341 @@ Example:
 # Summary
 
 CSS can be applied to HTML using Inline, Internal, or External methods. While Inline CSS is useful for quick styling and Internal CSS is suitable for small projects, External CSS is the preferred method for modern web development because it promotes code reusability, maintainability, and better project organization.
+
+
+# 02. CSS Selectors
+
+## Introduction
+
+CSS Selectors are patterns used to select HTML elements and apply styles to them. They allow developers to target specific elements, groups of elements, or elements based on their relationship within the HTML document.
+
+Selectors are one of the most fundamental concepts in CSS.
+
+---
+
+# What is a CSS Selector?
+
+A CSS Selector identifies one or more HTML elements so that CSS properties can be applied to them.
+
+## Syntax
+
+```css
+selector {
+    property: value;
+}
+```
+
+### Example
+
+```css
+p{
+    color: blue;
+}
+```
+
+In this example, the selector `p` selects all paragraph elements and changes their text color to blue.
+
+---
+
+# Types of CSS Selectors
+
+## 1. Universal Selector
+
+The Universal Selector selects every element in the HTML document.
+
+### Syntax
+
+```css
+*{
+    margin:0;
+    padding:0;
+}
+```
+
+### Uses
+
+* Reset default browser styles.
+* Apply common styling to all elements.
+
+---
+
+## 2. Element Selector
+
+The Element Selector selects HTML elements based on their tag name.
+
+### Example
+
+```css
+h1{
+    color:red;
+}
+```
+
+This rule applies to every `<h1>` element.
+
+---
+
+## 3. Class Selector
+
+The Class Selector selects elements that have a specific class attribute.
+
+A dot (`.`) is used before the class name.
+
+### Example
+
+HTML
+
+```html
+<p class="text">Hello CSS</p>
+```
+
+CSS
+
+```css
+.text{
+    color:green;
+}
+```
+
+### Features
+
+* Can be reused.
+* Multiple elements can share the same class.
+* One element can have multiple classes.
+
+---
+
+## 4. ID Selector
+
+The ID Selector selects one unique HTML element.
+
+A hash (`#`) is used before the id name.
+
+### Example
+
+HTML
+
+```html
+<h1 id="title">Welcome</h1>
+```
+
+CSS
+
+```css
+#title{
+    color:blue;
+}
+```
+
+### Features
+
+* Must be unique.
+* Used for one specific element.
+
+---
+
+## 5. Group Selector
+
+The Group Selector applies the same CSS rules to multiple selectors.
+
+Selectors are separated by commas.
+
+### Example
+
+```css
+h1, p, div{
+    color:red;
+}
+```
+
+This rule applies to all `<h1>`, `<p>`, and `<div>` elements.
+
+---
+
+# Relationship Selectors
+
+## Child Selector (`>`)
+
+The Child Selector selects only direct child elements.
+
+### Example
+
+```html
+<div>
+    <p>Direct Child</p>
+</div>
+```
+
+```css
+div > p{
+    color:red;
+}
+```
+
+The paragraph is selected because it is the direct child of the `<div>`.
+
+---
+
+## Descendant Selector (Space)
+
+The Descendant Selector selects all matching elements inside a parent element, regardless of nesting level.
+
+### Example
+
+```html
+<div>
+    <article>
+        <p>Paragraph</p>
+    </article>
+</div>
+```
+
+```css
+div p{
+    color:blue;
+}
+```
+
+The paragraph is selected even though it is inside `<article>`.
+
+---
+
+# Pseudo-Class Selectors
+
+Pseudo-classes apply styles based on the state of an element.
+
+## :link
+
+Styles unvisited links.
+
+```css
+a:link{
+    color:green;
+}
+```
+
+---
+
+## :visited
+
+Styles visited links.
+
+```css
+a:visited{
+    color:purple;
+}
+```
+
+---
+
+## :hover
+
+Applies styles when the mouse pointer is placed over an element.
+
+```css
+a:hover{
+    background-color:yellow;
+}
+```
+
+---
+
+## :active
+
+Applies styles while an element is being clicked.
+
+```css
+a:active{
+    background-color:red;
+}
+```
+
+---
+
+## :first-child
+
+Selects the first child element of its parent.
+
+```css
+p:first-child{
+    background-color:aqua;
+}
+```
+
+---
+
+# Selector Symbols
+
+| Selector     | Symbol      |
+| ------------ | ----------- |
+| Universal    | `*`         |
+| Class        | `.`         |
+| ID           | `#`         |
+| Child        | `>`         |
+| Descendant   | Space (` `) |
+| Group        | `,`         |
+| Pseudo Class | `:`         |
+
+---
+
+# Best Practices
+
+* Use class selectors for reusable styles.
+* Use id selectors only for unique elements.
+* Prefer external CSS for large projects.
+* Avoid unnecessary nesting.
+* Write meaningful class and id names.
+* Keep selectors simple and readable.
+
+---
+
+# Interview Questions
+
+### 1. What is a CSS Selector?
+
+A CSS Selector is used to select HTML elements so that CSS styles can be applied to them.
+
+---
+
+### 2. What is the difference between Class and ID selectors?
+
+* Class selectors can be used on multiple elements.
+* ID selectors must be unique within a webpage.
+
+---
+
+### 3. What is the difference between Child and Descendant selectors?
+
+* Child Selector (`>`) selects only direct child elements.
+* Descendant Selector (space) selects all matching descendants, regardless of nesting level.
+
+---
+
+### 4. Which selector selects every HTML element?
+
+The Universal Selector (`*`).
+
+---
+
+### 5. What are Pseudo-Class Selectors?
+
+Pseudo-class selectors apply styles based on the current state of an element, such as `:hover`, `:active`, `:visited`, and `:first-child`.
+
+---
+
+# Key Points
+
+* CSS selectors target HTML elements.
+* Universal Selector selects every element.
+* Element Selector targets elements by tag name.
+* Class Selector uses the `.` symbol.
+* ID Selector uses the `#` symbol.
+* Child Selector targets only direct children.
+* Descendant Selector targets all nested matching elements.
+* Pseudo-classes style elements based on their state.
+
+---
+
+# Summary
+
+CSS Selectors are essential for applying styles to HTML elements. They allow developers to target elements using tag names, classes, IDs, relationships, and element states. A strong understanding of selectors is the foundation for writing efficient, reusable, and maintainable CSS.
